@@ -8,3 +8,13 @@
  * 2. Выведите в консоль строку
  * "My name is <name> <surname> and my favorite number is <favoriteNumber>"
  */
+
+const user = {
+  name: "Liudmyla",
+  surname: "Horobets",
+  favoriteNumber: 13,
+};
+
+const userInfo = `My name is ${user.name} ${user.surname} and my favorite number is ${user.favoriteNumber}`;
+
+console.log(userInfo);

@@ -11,14 +11,25 @@
  * ВАЖНО: Исходите из того, что массивы содержат элементы примитивных типов
  */
 
-const a = [1, 2, 3]
-const b = [1, 2, 3]
+const areArraysEqual = (firstArray, secondArray) => {
+  if (
+    firstArray.length === secondArray.length &&
+    firstArray.every((element, index) => element === secondArray[index])
+  ) {
+    return true;
+  }
 
-console.log(a === b) // false (Почему?)
+  return false;
+};
 
-const c = [2, 1, 3]
-const d = [1, 2, 3, 4]
+const a = [1, 2, 3];
+const b = [1, 2, 3];
 
-console.log(areArraysEqual(a, b)) // true
-console.log(areArraysEqual(a, c)) // false
-console.log(areArraysEqual(a, d)) // false
+console.log(a === b); // false ?
+
+const c = [2, 1, 3];
+const d = [1, 2, 3, 4];
+
+console.log(areArraysEqual(a, b)); // true
+console.log(areArraysEqual(a, c)); // false
+console.log(areArraysEqual(a, d)); // false

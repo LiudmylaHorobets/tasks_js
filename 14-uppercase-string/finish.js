@@ -12,3 +12,18 @@
  *
  * 5. Выведите в консоль значение второй переменной
  */
+
+const book = "Harry Potter and the Philosopher's Stone";
+
+console.log(book instanceof String);
+
+console.log(typeof book);
+
+const bookUpperCase = book.toUpperCase();
+
+console.log(bookUpperCase);
+
+// const myString = new String('Liu')
+// console.log(myString instanceof String)
+// console.log(typeof myString)
+// console.log(myString.toUpperCase())

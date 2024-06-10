@@ -4,3 +4,8 @@
  *
  * 2. Виведите в консоль длину этой строки
  */
+const book = "Harry Potter and the Philosopher's Stone";
+
+const bookLength = book.length;
+
+console.log(bookLength);

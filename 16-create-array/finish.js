@@ -6,3 +6,12 @@
  *
  * 3. Выведите в консоль длину массива
  */
+
+const currentBooks = [
+  "Дім у волошковому морі",
+  "Аліса в Країні див",
+  "Джонатан Стрейндж та містер Норрелл",
+];
+
+console.log(currentBooks[0]);
+console.log(currentBooks.length);
