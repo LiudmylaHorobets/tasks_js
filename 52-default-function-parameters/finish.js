@@ -14,17 +14,26 @@
  * Внимательно сравните свои результаты с результатами тестовых вызовов
  */
 
-console.log(weatherForecast('Dubai', 'Солнечно'))
+// function weatherForecast(city, weather) {
+//   weather = weather !== undefined ? weather : "Great weather!";
+//   return `Weather forecast for ${city}: ${weather}`;
+// }
+
+function weatherForecast(city, weather = "Great weather") {
+  return `Weather forecast for ${city}: ${weather} `;
+}
+
+console.log(weatherForecast("Dubai", "Sunny"));
 // Прогноз погоды для города Dubai: Солнечно
 
-console.log(weatherForecast('London', 'Небольшой дождь'))
+console.log(weatherForecast("London", "Small rain"));
 // Прогноз погоды для города London: Небольшой дождь
 
-console.log(weatherForecast('Paris'))
+console.log(weatherForecast("Paris"));
 // Прогноз погоды для города Paris: Отличная погода!
 
-console.log(weatherForecast('Miami', ''))
+console.log(weatherForecast("Miami", ""));
 // Прогноз погоды для города Miami:
 
-console.log(weatherForecast('Las Vegas', undefined))
+console.log(weatherForecast("Las Vegas", undefined));
 // Прогноз погоды для города Las Vegas: Отличная погода!

@@ -9,35 +9,47 @@
  * 3. Оригинальный массив должен остаться без изменений
  */
 
+const sortProductsByPrice = (products) => {
+  const copyOfProducts = [...products];
+  return copyOfProducts.sort((a, b) => a.price - b.price);
+  // return [...products].sort((a, b) => b.price - a.price);
+};
+
 const inputProducts = [
   {
-    title: 'Phone case',
-    price: 23,
+    title: "Phone case",
+    price: 235,
     quantity: 2,
-    category: 'Accessories',
+    category: "Accessories",
   },
   {
-    title: 'Android phone',
+    title: "Android phone",
     price: 150,
     quantity: 1,
-    category: 'Phones',
+    category: "Phones",
   },
   {
-    title: 'Headphones',
+    title: "Headphones",
     price: 78,
     quantity: 1,
-    category: 'Accessories',
+    category: "Accessories",
   },
   {
-    title: 'Sport Watch',
+    title: "Sport Watch",
     price: 55,
     quantity: 2,
-    category: 'Watches',
+    category: "Watches",
   },
-]
+];
 
-// const sortedProducts = sortProductsByPrice(inputProducts)
+const sortedProducts = sortProductsByPrice(inputProducts);
 
-// console.log(sortedProducts) // Массив отсортированных товаров
+console.log(sortedProducts); // Массив отсортированных товаров
 
-// console.log(inputProducts) // Оригинальный массив не должен измениться
+console.log(inputProducts); // Оригинальный массив не должен измениться
+
+const quantityReadBooks = [5, 8, 9, 2, 11];
+
+// console.log(quantityReadBooks.sort()); // [ 11, 2, 5, 8, 9 ]
+// console.log(quantityReadBooks.sort((a, b) => a - b)); // [ 2, 5, 8, 9, 11 ]
+// console.log(quantityReadBooks.sort((a, b) => b - a)); // [ 11, 9, 8, 5, 2 ]

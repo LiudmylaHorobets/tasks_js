@@ -7,34 +7,59 @@
  * равными сумме всех количеств в каждой категории
  */
 
+// function quantitiesByCategories(products) {
+//  return products.reduce((qtysByCategories, product) => {
+//    qtysByCategories[product.category] = product.quantity;
+
+//    return qtysByCategories;
+//  }, {});
+// }
+
+// result = { Accessories: 1, Phones: 1, Watches: 2 }
+
+function quantitiesByCategories(products) {
+  return products.reduce((qtysByCategories, product) => {
+    const { category, quantity } = product;
+    qtysByCategories[category] = (qtysByCategories[category] || 0) + quantity; // якщо не має такого значення - буде 0
+
+    return qtysByCategories;
+  }, {});
+}
+
 const inputProducts = [
   {
-    title: 'Phone case',
+    title: "Phone case",
     price: 23,
     quantity: 2,
-    category: 'Accessories',
+    category: "Accessories",
   },
   {
-    title: 'Android phone',
+    title: "Android phone",
     price: 150,
     quantity: 1,
-    category: 'Phones',
+    category: "Phones",
   },
   {
-    title: 'Headphones',
+    title: "Headphones",
     price: 78,
     quantity: 1,
-    category: 'Accessories',
+    category: "Accessories",
   },
   {
-    title: 'Sport Watch',
+    title: "Sport Watch",
     price: 55,
     quantity: 2,
-    category: 'Watches',
+    category: "Watches",
   },
-]
+  {
+    title: "Headphones",
+    price: 55,
+    quantity: 5,
+    category: "Clocks",
+  },
+];
 
-console.log(quantitiesByCategories(inputProducts))
+console.log(quantitiesByCategories(inputProducts));
 /* {
   Accessories: 3,
   Phones: 1,
