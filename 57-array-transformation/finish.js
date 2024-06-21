@@ -1,6 +1,6 @@
 /** ЗАДАЧА 57 - Трансформация массива объектов
  *
- * 1. Создайте функцию "processPosts", которая будет возвращать новый массив сообщений
+ * 1. Создайте функцию "processPosts", которая будет возвращать новый массив сообщений - map()
  *
  * 2. Обратите внимание, что
  *  - некоторые имена свойств в каждом сообщении изменены
@@ -9,25 +9,51 @@
  * 3. Исходный массив постов должен остаться без изменений
  */
 
+// const processPosts = (posts) => {
+//   return posts.map((post) => {
+//     return {
+//       postId: post.postId + 1000,
+//       postAuthor: post.author,
+//       postCommentsQty: post.commentsQty === undefined ? 0 : post.commentsQty,
+//     };
+//   });
+// };
+
+const processPosts = (posts) => {
+  return posts.map((post) => {
+    const {
+      postId,
+      author: postAuthor,
+      commentsQty: postCommentsQty = 0,
+    } = post;
+
+    return {
+      postAuthor,
+      postCommentsQty,
+      postId: postId + 1000,
+    };
+  });
+};
+
 const testPosts = [
   {
     postId: 234,
-    author: 'robd',
+    author: "robd",
     commentsQty: 5,
   },
   {
     postId: 823,
-    author: 'sady',
+    author: "sady",
   },
   {
     postId: 161,
-    author: 'merryl',
+    author: "merryl",
     commentsQty: 8,
   },
-]
+];
 
-const processedPosts = processPosts(testPosts)
-console.log(processedPosts)
+const processedPosts = processPosts(testPosts);
+console.log(processedPosts);
 /*
 [
   {
@@ -48,5 +74,5 @@ console.log(processedPosts)
 ]
 */
 
-console.log(testPosts)
+console.log(testPosts);
 // оригинальный массив должен остаться без изменений
